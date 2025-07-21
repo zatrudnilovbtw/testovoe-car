@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+  max-height: none;
+  padding: 24px;
+  background-color: #ffff;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 400px));
+  grid-template-rows: auto auto;
+  gap: 16px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Адаптивность для разных экранов */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(1, minmax(280px, 400px));
+  }
+}
+
+/* Анимация появления карточек */
+.cardWrapper {
+  animation: fadeIn 0.5s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.cardWrapper:hover {
+  transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
